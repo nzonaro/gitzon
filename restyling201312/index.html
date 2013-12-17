@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+<!--     <meta name="viewport" content="width=1280"> -->
+<!--     <meta name="viewport" content="width=1280, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"> -->
+    <meta name="viewport" content="width=1024, height=device-height">
+    <link rel="stylesheet" href="css/jahia.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/application.css">
+    <link rel="stylesheet" href="css/fwa.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+
+    <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+
+  </head>
+  <!-- <body id="ez" data-trackingcampain="test?tt"> -->
+  <body id="ez">
+    <script type="text/javascript">
+      /****************
+      *** Yoox Json ***
+      ****************/
+      var jsinit_toolbar = {
+        'labels': {
+          'welcomeTextMale': '${HEADERBAR_LOGGED_M_LABEL}',
+          'welcomeTextFemale': '${HEADERBAR_LOGGED_F_LABEL}',
+          'searchPlaceholder': '${HEADERBAR_TEXT_SEARCH_BUTTON_LABEL}',
+          'storeLocator': '${HEADERBAR_STORE_LOCATOR_LABEL}',
+          'login': '${HEADERBAR_LOGIN_LABEL}',
+          'logout': '${HEADERBAR_LOGOUT_LABEL}',
+          'myAccount': '${HEADERBAR_MY_ACCOUNT_LABEL}',
+          'wishlist': '${HEADERBAR_WISH_LIST_LABEL}',
+          'shoppingBag': '${HEADERBAR_CHECKOUT_LABEL}'
+        }
+      };
+      var jsinit_cartLayer = {
+        'labels': {
+          'color': '@@[CMSLabels/toolbar.json --> color]@@',
+          'size': '@@[CMSLabels/toolbar.json --> size]@@',
+          'quantity': '@@[CMSLabels/toolbar.json --> qty]@@',
+          'subtotal': '@@[CMSLabels/toolbar.json --> subtotal]@@',
+          'price': '@@[CMSLabels/toolbar.json --> price]@@',
+          'emptyCart': '@@[CMSLabels/toolbar.json --> noArticle]@@',
+          'checkShoppingBag': '@@[CMSLabels/toolbar.json --> checkShoppingBag]@@',
+          'addedToCart': '@@[CMSLabels/toolbar.json --> addShoppingBag_Confirmation]@@',
+          'noMoreThanTwo': '@@[CMSLabels/toolbar.json --> noMoreThanTwo]@@',
+          'maxItemsInCart': '@@[CMSLabels/toolbar.json --> alertMaxProd]@@',
+          'soldOut': '@@[CMSLabels/toolbar.json --> soldOut]@@',
+        },
+        'parentSiteCode': '',
+        'cartLink': 'Teleyoox-->links-->url del link checkout',
+        'currency': '$GEOAPI.Site.Market.Currency',
+        'countryIsoCode': '$GEOAPI.Site.Country.Code',
+        'gaTrackPage': '$sezione della pagina in cui ci si trova',
+        'maxItems': '$valoreMappato --> INFO BY YOOX',
+        'itemsInCart': '@@[CMSLabels/toolbar.json --> itemsInCart]@@'
+      };
+
+      var Navigation = {
+        'TSKAY': '6DF9DB3A',
+        'SITE_CODE': 'ZEGNA_IT',
+        'ID_NATION': '2',
+        'GENDER': 'U',
+        "DEVICE": {"isSmartphone":false,"isTablet":false,"isDesktop":true,"isIE6":false,"isIE7":false,"isIE8":false,"isIE9":false},
+        'SECTION': 'experience',
+        'TSKAY_PARENT': '', 'SUBSECTION': '', 'SITECODE_PARENT': '',
+        'SERVERS': { 'HTTP': 'http://store.zegna.com', 'HTTPS': 'https://secure.store.zegna.com', 'COOKIE': 'zegna.com', 'PRODUCTS': 'http://cdn.yoox.biz','LAYOUT': 'http://cdn2.yoox.biz' }
+      };
+    </script>
+    <div id="balloon_scroll" class="balloon cookie"><div class="arrow"></div><div class="txt">Click here to open the menu</div><a href="javascript:void(0);"></a></div>
+   <div class="balloon--cookie-policy">
+      <span class="title">Cookie Policy</span>
+      <p class="text">We use cookies on the website. If you continue to use this website you will be agreeeing to thewebsite <a href="" title="">General Terms and Condition of Use</a>. <a href="" title="">Privacy Policy</a> and the use of cookies while using the website.
+      To find out more about cookies and how to change your preferences please see our <a href="#" title="">Cookie Policy</a>. </p>
+      <a href="#" class="ok">Ok</a>
+    </div>
+    <div class="popup-newsletter">
+      <a href="#" class="close">close</a>
+      <!--<img src="images/popup-newsletter/canvas.jpg" alt=""/>-->
+      <div class="content">
+        <div class="wp-newsletter">
+            <div class="step-1">
+              <h1 class="title">Registrati alla newsletter</h1>
+              <h2 class="subtitle">REGISTRATI PER ACCEDERE A CONTENUTI ESCLUSIVI ED ESSERE AGGIORNATO SU EVENTI E COLLEZIONI</h2>
+              <form id="newsletter-subscription-popup">
+                <input type="email" autocapitalize="off" class="input-newsletter first-insert" value="Enter email address" name="email" type="email">
+                <a href="#" class="error-ico invisible"></a>
+                <p class="error-def invisible"
+                data-error-email="Please insert a valid email address"
+                data-error-privacy="Privacy Policy error"
+                data-sending="We are sending your information, be so kind to wait just a few seconds"
+                data-error-generic="Generic error"
+                data-subscription-ok="THANK YOU FOR SIGNING UP"
+                data-subscription-ko="Email presente nei sistemi">Please insert a valid email address</p>
+                <div class="wp-privacy">
+                  <input class="privacy-cb" type="checkbox" value="privacy-ok" name="privacy-cb">
+                  <label for="privacy-cb">I accept the terms of the <a target="_blank" href="/it/europe/privacy" class="privacy-link">Privacy Policy</a></label>
+                </div>
+                <!-- <a class="submit" href="javascript:void(0)">SUBSCRIBE NOW</a> -->
+                <a class="submit" href="http://store.zegna.com/12342.html">SUBSCRIBE NOW</a>
+              </form>
+
+            </div>
+            
+            <div class="step-2 hidden">
+              <div class="loader-text">
+                <div class="loader-text">
+                <h3>Loading...</h3>
+                <p>We are sending your information, be so kind to wait just a few seconds</p>
+              </div>
+              </div>
+            </div>
+            <div class="step-3 hidden">
+              <div class="loader-text">
+                <h3>Thank you for signing up</h3>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+    </div>
+    <!-- popup change language -->
+    <div class="popup-language">
+      <a class="close" href="#">close</a>
+      <div class="wrapper">
+        <h2>Language Preferences</h2>
+        <p>Do you want to change the default language to cantonese?</p>
+        <div class="buttons">
+          <a class="no" href="#">no</a>
+          <a class="yes" href="http://www.zegna.com">yes</a>
+        </div>
+      </div>
+    </div>
+    <div class="bodywrapper">
+      <header class="clearfix" id="header">
+        <div id="balloon_search" class="balloon cookie"><div class="arrow"></div><div class="txt">Click here to open the menu</div><a href="javascript:void(0);"></a></div>
+
+        <div id="topBarContainer">
+            <ul id="shippingCountry">
+              <li class="shippingCountry">@@[CMSLabels/legal.json --> shippingTo]@@ <span class="nation">@@NAZIONE@@</span>
+                  <div class="dash"><!----></div>
+              </li>
+              <li class="propertyCountryLink"><a href="@@[Teleyoox --> changeCountry.Url]@@ ">
+                <div class="text">@@[CMSLabels/legal.json --> changeCountry]@@</div>
+                <div class="icon"><!----></div>
+              </a>
+                  <div class="dash"><!----></div>
+              </li>
+          </ul>
+          <div id="search">
+            <form action="http://store.zegna.com/searchresult.asp" id="textSearch">
+                <input type="hidden" name="macro" value="">
+                <input type="hidden" name="micro" value="">
+                <input type="hidden" name="color" value="">
+                <input type="hidden" name="size" value="">
+                <input type="hidden" name="season" value="A,P,E">
+                <input type="hidden" name="department" value="">
+                <input type="hidden" name="brand" value="">
+                <input type="hidden" name="heel" value="">
+                <input type="hidden" name="wedge" value="">
+                <input type="hidden" name="minPrice" value=""><input type="hidden" name="maxPrice" value="">
+                <input type="hidden" name="sortRule" value="PriorityDescending"><input type="hidden" name="salesline" value="">
+                <input type="hidden" name="prints" value=""><input type="hidden" name="stone" value="">
+                <input type="hidden" name="material" value="">
+                <input type="hidden" name="gender" value="U"><input type="hidden" name="page" value="">
+                <input type="hidden" name="productsPerPage" value="200">
+                <input type="hidden" name="searchApi" value="1">
+                <button type="submit" class="iconSearch"><!----></button>
+                <input type="text" id="textSearchInput" name="textSearch" value="@@[CMSLabels/search_base.json --> textSearchButton]@@">
+            </form>
+            <div class="closeSearch">
+                <div class="icon"><!----></div>
+            </div>
+          </div>
+          <nav id="userAndCart">
+            <ul>
+                <li class="storeLocator"><a href="@@[url dello store locator]@@">@@[CMSLabels/legal.json --> storeLocator]@@</a>
+                    <div class="dash"><!----></div>
+                </li>
+                <li class="welcome hidden"><span class="text"><!----></span>
+                    <div class="dash"><!----></div>
+                </li>
+                <li class="login hidden"><a class="grey" rel="nofollow" href="@@[Teleyoox --> login.Url]@@">@@[CMSLabels/toolbar.json --> login]@@</a>
+                    <div class="dash"><!----></div>
+                </li>
+                <li class="logout hidden"><a href="@@[Teleyoox --> logout.Url]@@" rel="nofollow">@@[CMSLabels/toolbar.json --> logout]@@</a>
+                    <div class="dash"><!----></div>
+                </li>
+                <li class="account hidden"><a class="grey" rel="nofollow" href="@@[Teleyoox --> myAccount.Url]@@">@@[CMSLabels/toolbar.json --> myAccount]@@</a>
+                    <div class="dash"><!----></div>
+                </li>
+                <li class="wishlist hidden"><a href="@@[Teleyoox --> wishList.Url]@@">@@[CMSLabels/toolbar.json --> wishlist]@@</a>
+                    <div class="dash"><!----></div>
+                </li>
+                <li id="headerShoppingBag" class="">
+                    <a class="cartLink" href="@@[Teleyoox --> checkout.Url]@@" rel="nofollow"><span class="shoppingIcon"><!----></span>@@[CMSLabels/toolbar.json --> checkout]@@(<span class="count">0</span>)</a>
+                    <div id="cartLayer" style="display:none;">
+                        <div id="cartItemAddedMsg"><!----></div>
+                    </div>
+                </li>
+                 <!--<li id="customercarenumber" class="customercarenumber">
+                    <a href="#">800 987 157</a>
+                </li>-->
+            </ul>
+          </nav>
+        </div>
+     </header>
+
+      <aside class="wp-aside-menu">
+        <div id="balloon_menu" class="balloon cookie"><div class="arrow"></div><div class="txt">Click here to open the menu</div><a href="javascript:void(0);"></a></div>
+
+        <div id="main-menu" class="wp-menu">
+          <a class="logo" href="/it/europe">Zegna.com</a>
+          <nav class="nav-shop-online">
+            <a href="#" id="link-shop-online">shop online</a>
+          </nav>
+
+          <nav class="nav-brands">
+            <ul>
+              <li><a class="ez" href="#">ERMENEGILDO Zegna</a></li>
+              <li><a class="zz" href="#">Z ZEGNA</a></li>
+              <li><a class="zs" href="#">ZEGNA SPORT</a></li>
+              <li><a class="ct" href="#">COUTURE</a></li>
+              <li><a class="mtm" href="#">MADE TO MEASURE</a></li>
+              <li><a class="fr" href="#">FRAGRANCES</a></li>
+              <li><a class="zg" href="#">ZEGNA GROUP</a></li>
+            </ul>
+          </nav>
+
+          <!-- START NEWSLETTER -->
+          <div class="wp-newsletter">
+            <!-- step 1 -->
+            <div class="step-1">
+              <h2>NEWSLETTER</h2>
+              <h3>Subscribe to our mailing list for exclusive updates and information.</h3>
+              <form id="newsletter-subscription">
+                <input type="email" autocapitalize="off" class="input-newsletter first-insert" value="INSERT YOUR EMAIL" name="email" type="email">
+                <a href="#" class="error-ico invisible" data-visible="data-error-email"></a>
+                <p class="error-def"
+                data-error-email="Please insert a valid email address"
+                data-error-privacy="Privacy Policy error"
+                data-sending="We are sending your information, be so kind to wait just a few seconds"
+                data-error-generic="Generic error"
+                data-subscription-ok="THANK YOU FOR SIGNING UP"
+                data-subscription-ko="Email presente nei sistemi">
+                </p>
+               <div class="wp-privacy">
+                <input class="privacy-cb" type="checkbox" value="privacy-ok" name="privacy-cb">
+                <label for="privacy-cb">I accept the terms of the <a target="_blank" href="/it/europe/privacy" class="privacy-link">Privacy Policy</a></label>
+                </div> 
+                <a class="submit" href="javascript:void(0)">SUBSCRIBE NOW</a>
+              </form>
+            </div>
+            <!-- step 2 -->
+            <div class="step-2 hidden">
+              <div class="loader-mail"></div>
+              <div class="loader-text">
+                <h3>Loading...</h3>
+                <p>We are sending your information, be so kind to wait just a few seconds</p>
+              </div>
+            </div>
+            <!-- step 3 -->
+            <div class="step-3 hidden">
+              <div class="loader-text">
+                <h3>Thank you for signing up</h3>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <!-- END NEWSLETTER -->
+
+          <div class="wp-social">
+            <h2>STAY CONNECTED</h2>
+            <div>
+              <nav class="nav-social">
+                <ul>
+                  <li class="facebook">
+                    <a class="trackable" data-catalog="" data-analytics="followus/FB/header" title="facebook" href="https://www.facebook.com/ErmenegildoZegna" target="blank" data-track-origin="Facebook/header">Facebook</a>
+                  </li>
+                  <li class="twitter">
+                    <a class="trackable" data-catalog="" data-analytics="followus/TW/header" title="twitter" href="https://twitter.com/Zegna" target="blank" data-track-origin="Twitter/header">Twitter</a>
+                  </li>
+                  <li class="you-tube">
+                    <a class="trackable" data-catalog="" data-analytics="followus/YT/header" title="you tube" href="http://www.youtube.com/user/EZegnaOfficial" target="blank" data-track-origin="Youtube/header">You Tube</a>
+                  </li>
+                  <li class="pinterest">
+                    <a class="trackable" data-catalog="" data-analytics="followus/PI/header" title="pinterest" href="http://www.youtube.com/user/EZegnaOfficial" target="blank" data-track-origin="Pinterest/header">Pinterest</a>
+                  </li>
+                  <li class="instagram">
+                    <a class="trackable" data-catalog="" data-analytics="followus/IN/header" title="instagram" href="http://instagram.com/zegnaofficial" target="blank" data-track-origin="Instagram/header">Instagram</a>
+                  </li>
+                  <!--li class="rss">
+                    <a class="trackable" data-catalog="" data-analytics="followus/RSS/footer" title="rss" href="http://www.zegna.com/it/europe/magazine/feed.rss" target="blank">Rss</a>
+                  </li-->
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="customer-care-number">
+            <span class="telephone"></span>
+            <h3 class="phone-number">800 987 157</h3>
+            <a class="contact-customer-service" href="#">customer service online store</a>
+          </div>
+          <nav class="nav-apps">
+            <ul>
+              <li><a target="_blank" href="http://itunes.com/apps/zegnainstore">Zegna in_store app</a></li>
+              <li><a target="_blank" href="http://itunes.apple.com/it/app/zegna-live/id491007795?mt=8">zegna live app</a></li>
+            </ul>
+          </nav>
+
+           <nav class="nav-service">
+            <ul>
+              <li><a href="#">CONTACT US</a></li>
+              <li><a href="#">PRESS ROOM</a></li>
+              <li><a href="#">CAREERS</a></li>
+              <li><a href="#">CUSTOMER CARE</a></li>
+              <li><a href="#">LEGAL AREA</a></li>
+              <li><a class="js-popup" href="http://store.zegna.com/scripts/services/layerinfoservice.asp?tskay=6DF9DB3A&page=popupinfo_returns">PRIVACY POLICY</a></li>
+              <li><a class="js-popup" href="http://store.zegna.com/scripts/server/PopupDeliveryCostService.asp?tskay=6DF9DB3A">SHIPPING & RETURNS</a></li>
+            </ul>
+          </nav>
+
+            <div class="wp-service"><p>ERMENEGILDO ZEGNA HOLDITALIA SPA - Sede legale Via Roma 99/100 13835 TRIVERO (BI) - Reg.Imprese di Biella 00154990022 Capitale Sociale € 4.300.000 i.v. - P.Iva 00154990022 SIAE n.449/1/060576</p></div>
+          </div>
+
+        <!--shop online -->
+
+        <div id="main-shoponline" class="wp-menu">
+          <div class="wp-main-submenu">
+
+            <ul class="accordion">
+              <li>
+                <a href="javascript:void(0)" class="link-col-shoponline"><h2><span>SPRING SUMMER 2013</span></h2></a>
+                <div class="wp-col-shoponline">
+                  <div class="wp-content-shoponline">
+                    <div class="arrow"></div>
+                    <div class="even">
+                      <h3><span>ABBIGLIAMENTO</span></h3>
+                      <nav>
+                        <ul>
+                          <li><a href="#" title="Outerwear">Outerwear</a></li>
+                          <li><a href="#" title="Abiti">Abiti</a></li>
+                          <li><a href="#" title="Giacche">Giacche</a></li>
+                          <li><a href="#" title="Camicie">Camicie</a></li>
+                          <li><a href="#" title="Pantaloni">Pantaloni</a></li>
+                          <li><a href="#" title="Maglieria">Maglieria</a></li>
+                          <li><a href="#" title="Polo & T-Shirt">Polo&amp;T-Shirt</a></li>
+                          <li><a href="#" title="Beachwear">Beachwear</a></li>
+                          <li><a href="#" title="Felpe">Felpe</a></li>
+                          <li><a href="#" title="Intimo">Intimo</a></li>
+                          <li><a href="#" title="Homewear">Homewear</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="even">
+                      <h3><span>ACCESSORIES</span></h3>
+                      <nav>
+                        <ul>
+                          <li><a href="#" title="Digital Accessories">Digital Accessories</a></li>
+                          <li><a href="#" title="Mocassins">Mocassins</a></li>
+                          <li><a href="#" title="Travel">Travel</a></li>
+                          <li><a href="#" title="Eyewear">Eyewear</a></li>
+                          <li><a href="#" title="Monterubello">Monterubello</a></li>
+                          <li><a href="#" title="High Performance">High Performance</a></li>
+                          <li><a href="#" title="Fragrances">Fragrances</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="even">
+                    <h3><span>Categoria</span></h3>
+                    <nav>
+                      <ul>
+                        <li><a href="#" title="Cravatte & Pochette">Cravatte &amp; Pochette</a></li>
+                        <li><a href="#" title="Sciarpe">Sciarpe</a></li>
+                        <li><a href="#" title="Cappelli">Cappelli</a></li>
+                        <li><a href="#" title="Gemelli &Gioielli">Gemelli &amp; Gioielli</a></li>
+                        <li><a href="#" title="Strumenti da Scrittura">Strumenti da Scrittura</a></li>
+                        <li><a href="#" title="Occhiali">Occhiali</a></li>
+                        <li><a href="#" title="Guanti">Guanti</a></li>
+                        <li><a href="#" title="Piccola pelletteria">Piccola pelletteria</a></li>
+                        <li><a href="#" title="Borse">Borse</a></li>
+                        <li><a href="#" title="Scarpe">Scarpe</a></li>
+                        <li><a href="#" title="Cinture">Cinture</a></li>
+                        <li><a href="#" title="Cravatte & Pochette">Cravatte &amp; Pochette</a></li>
+                        <li><a href="#" title="Sciarpe">Sciarpe</a></li>
+                        <li><a href="#" title="Cappelli">Cappelli</a></li>
+                        <li><a href="#" title="Gemelli &Gioielli">Gemelli &amp; Gioielli</a></li>
+                        <li><a href="#" title="Strumenti da Scrittura">Strumenti da Scrittura</a></li>
+                        <li><a href="#" title="Occhiali">Occhiali</a></li>
+                        <li><a href="#" title="Guanti">Guanti</a></li>
+                        <li><a href="#" title="Piccola pelletteria">Piccola pelletteria</a></li>
+                        <li><a href="#" title="Borse">Borse</a></li>
+                        <li><a href="#" title="Scarpe">Scarpe</a></li>
+                        <li><a href="#" title="Cinture">Cinture</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li>
+                <a href="javascript:void(0)" class="link-col-shoponline"><h2><span>FALL WINTER 2013</span></h2></a>
+                <div class="wp-col-shoponline">
+                  <div class="wp-content-shoponline">
+                    <div class="arrow"></div>
+                    <div class="even">
+                      <h3><span>ABBIGLIAMENTO</span></h3>
+                      <nav>
+                        <ul>
+                          <li><a href="#" title="Outerwear">Outerwear</a></li>
+                          <li><a href="#" title="Abiti">Abiti</a></li>
+                          <li><a href="#" title="Giacche">Giacche</a></li>
+                          <li><a href="#" title="Camicie">Camicie</a></li>
+                          <li><a href="#" title="Pantaloni">Pantaloni</a></li>
+                          <li><a href="#" title="Maglieria">Maglieria</a></li>
+                          <li><a href="#" title="Polo & T-Shirt">Polo&amp;T-Shirt</a></li>
+                          <li><a href="#" title="Beachwear">Beachwear</a></li>
+                          <li><a href="#" title="Felpe">Felpe</a></li>
+                          <li><a href="#" title="Intimo">Intimo</a></li>
+                          <li><a href="#" title="Homewear">Homewear</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="even">
+                      <h3><span>ACCESSORIES</span></h3>
+                      <nav>
+                        <ul>
+                          <li><a href="#" title="Digital Accessories">Digital Accessories</a></li>
+                          <li><a href="#" title="Mocassins">Mocassins</a></li>
+                          <li><a href="#" title="Travel">Travel</a></li>
+                          <li><a href="#" title="Eyewear">Eyewear</a></li>
+                          <li><a href="#" title="Monterubello">Monterubello</a></li>
+                          <li><a href="#" title="High Performance">High Performance</a></li>
+                          <li><a href="#" title="Fragrances">Fragrances</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="even">
+                    <h3><span>Categoria</span></h3>
+                    <nav>
+                      <ul>
+                        <li><a href="#" title="Cravatte & Pochette">Cravatte &amp; Pochette</a></li>
+                        <li><a href="#" title="Sciarpe">Sciarpe</a></li>
+                        <li><a href="#" title="Cappelli">Cappelli</a></li>
+                        <li><a href="#" title="Gemelli &Gioielli">Gemelli &amp; Gioielli</a></li>
+                        <li><a href="#" title="Strumenti da Scrittura">Strumenti da Scrittura</a></li>
+                        <li><a href="#" title="Occhiali">Occhiali</a></li>
+                        <li><a href="#" title="Guanti">Guanti</a></li>
+                        <li><a href="#" title="Piccola pelletteria">Piccola pelletteria</a></li>
+                        <li><a href="#" title="Borse">Borse</a></li>
+                        <li><a href="#" title="Scarpe">Scarpe</a></li>
+                        <li><a href="#" title="Cinture">Cinture</a></li>
+                        <li><a href="#" title="Cravatte & Pochette">Cravatte &amp; Pochette</a></li>
+                        <li><a href="#" title="Sciarpe">Sciarpe</a></li>
+                        <li><a href="#" title="Cappelli">Cappelli</a></li>
+                        <li><a href="#" title="Gemelli &Gioielli">Gemelli &amp; Gioielli</a></li>
+                        <li><a href="#" title="Strumenti da Scrittura">Strumenti da Scrittura</a></li>
+                        <li><a href="#" title="Occhiali">Occhiali</a></li>
+                        <li><a href="#" title="Guanti">Guanti</a></li>
+                        <li><a href="#" title="Piccola pelletteria">Piccola pelletteria</a></li>
+                        <li><a href="#" title="Borse">Borse</a></li>
+                        <li><a href="#" title="Scarpe">Scarpe</a></li>
+                        <li><a href="#" title="Cinture">Cinture</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="close-submenu-btn">x</div>
+      </div>
+
+        <div id="main-submenu" class="wp-menu">
+          <div class="wp-main-submenu">
+            <div class="odd">
+              <h2><span>COLLECTION</span></h2>
+              <nav>
+                <ul>
+                  <li><a href="#" title="CAMPAIGN">CAMPAIGN</a></li>
+                  <li><a href="#" title="FASHION SHOW SS 2013">FASHION SHOW SS 2013</a></li>
+                  <li><a href="#" title="AUTUMN WINTER PREVIEW">AUTUMN WINTER PREVIEW</a></li>
+                  <li><a href="#" title="LOOKBOOK">LOOKBOOK</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="even">
+              <h2><span>ABBIGLIAMENTO</span></h2>
+              <nav>
+                <ul>
+                  <li><a href="#" title="Outerwear">Outerwear</a></li>
+                  <li><a href="#" title="Abiti">Abiti</a></li>
+                  <li><a href="#" title="Giacche">Giacche</a></li>
+                  <li><a href="#" title="Camicie">Camicie</a></li>
+                  <li><a href="#" title="Pantaloni">Pantaloni</a></li>
+                  <li><a href="#" title="Maglieria">Maglieria</a></li>
+                  <li><a href="#" title="Polo & T-Shirt">Polo&amp;T-Shirt</a></li>
+                  <li><a href="#" title="Beachwear">Beachwear</a></li>
+                  <li><a href="#" title="Felpe">Felpe</a></li>
+                  <li><a href="#" title="Intimo">Intimo</a></li>
+                  <li><a href="#" title="Homewear">Homewear</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="odd">
+              <h2><span>ACCESSORIES</span></h2>
+              <nav>
+                <ul>
+                  <li><a href="#" title="Digital Accessories">Digital Accessories</a></li>
+                  <li><a href="#" title="Mocassins">Mocassins</a></li>
+                  <li><a href="#" title="Travel">Travel</a></li>
+                  <li><a href="#" title="Eyewear">Eyewear</a></li>
+                  <li><a href="#" title="Monterubello">Monterubello</a></li>
+                  <li><a href="#" title="High Performance">High Performance</a></li>
+                  <li><a href="#" title="Fragrances">Fragrances</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="even">
+              <h2><span>Categoria</span></h2>
+              <nav>
+                <ul>
+                  <li><a href="#" title="Cravatte & Pochette">Cravatte &amp; Pochette</a></li>
+                  <li><a href="#" title="Sciarpe">Sciarpe</a></li>
+                  <li><a href="#" title="Cappelli">Cappelli</a></li>
+                  <li><a href="#" title="Gemelli &Gioielli">Gemelli &amp; Gioielli</a></li>
+                  <li><a href="#" title="Strumenti da Scrittura">Strumenti da Scrittura</a></li>
+                  <li><a href="#" title="Occhiali">Occhiali</a></li>
+                  <li><a href="#" title="Guanti">Guanti</a></li>
+                  <li><a href="#" title="Piccola pelletteria">Piccola pelletteria</a></li>
+                  <li><a href="#" title="Borse">Borse</a></li>
+                  <li><a href="#" title="Scarpe">Scarpe</a></li>
+                  <li><a href="#" title="Cinture">Cinture</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="odd">
+              <h2><span>Style Guide</span></h2>
+              <nav>
+                <ul>
+                  <li><a href="#" title="Prints">Prints</a></li>
+                  <li><a href="#" title="Summer Colours">Summer Colours</a></li>
+                  <li><a href="#" title="Silk Passion">Silk Passion</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="close-submenu-btn">x</div>
+          <script type="text/javascript">
+            /******************************
+            *** Set Active Brand - Yoox ***
+            *******************************/
+            var active_brand = 'ct'
+          </script>
+        </div>
+
+        <div class="handle ez"></div>
+      </aside>
+
+      <section id="page-content">
+        <div class="wp-page-content clearfix">
+          <div class="wp-area gr-3x2 clearfix">
+            <!-- slider -->
+            <article class="ez dark home module gr-3x2 uomo wrap-swipe-slider loop">
+              <a href="#" class="link-block">
+                <div class="text-block">
+                  <h1 class="logo">Ermenegildo Zegna</h1>
+                  <h2 class="title">Passion for Silk</h2>
+                  <h3 class="sub-title">
+                    <span><em>Spring Summer 2013</em></span>
+                  </h3>
+                  <span class="label-link">Discover More</span>
+                </div>
+              </a>
+              <div class="wrap-carousel swipe clearfix">
+                <ul class="carousel">
+                  <li>
+                    <img class="loader" alt="loading..." src="images/ico/loader.gif" />
+                    <img class="preload" src="images/page/modules/placeholder/mod_3x2.jpg" data-url="images/page/modules/mod_3x2.jpg" />
+                  </li>
+                  <li>
+                    <img class="loader" alt="loading..." src="images/ico/loader.gif" />
+                    <img class="preload" src="images/page/modules/placeholder/mod_3x2_a.jpg" data-url="images/page/modules/mod_3x2_a.jpg" />
+                  </li>
+                  <li>
+                    <img class="loader" alt="loading..." src="images/ico/loader.gif" />
+                    <img class="preload" src="images/page/modules/placeholder/mod_3x2_b.jpg" data-url="images/page/modules/mod_3x2_b.jpg" />
+                  </li>
+                </ul>
+              </div>
+              <menu class="counter js-counter">
+                <li><a href="#" class="active">1.</a></li>
+                <li><a href="#" class="">2.</a></li>
+                <li><a href="#" class="">3.</a></li>
+              </menu>
+            </article>
+          </div>
+          <div class="wrap-row">
+            <div class="wp-area gr-1x2">
+              <!-- class img-silk is related with text module that has class info-silk -->
+
+              <article class="module gr-1x1 info t-link">
+                <div class="arrow"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_text.gif"  >
+                  <div class="text-block">
+                    <h3 class="sub-title">
+                      <span><em>Highlights</em></span>
+                    </h3>
+                    <h2 class="title">Seasonal Silk Passion</h2>
+                    <p class="desc">
+                      This autumn, our ambition to deliver the finest materials and the skills of the best artisans
+                    </p>
+                    <span class="label-link">Discover More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="module gr-1x1 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_img.gif" data-url="images/page/modules/mod_1x1_img.jpg" />
+                </a>
+              </article>
+
+            </div>
+            <div class="wp-area gr-2x2">
+              <article class="zz btn-empty white module gr-2x2 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <div class="text-block" data-visible="false">
+                    <h2 class="title">collection</h2>
+                    <h3 class="sub-title">
+                      <span><em>Spring Summer 2013</em></span>
+                    </h3>
+                    <span class="label-link">Discover More</span>
+                  </div>
+                  <img src="images/page/modules/placeholder/mod_2x2_img.gif"  data-url="images/page/modules/mod_2x2_img.jpg" />
+                </a>
+              </article>
+            </div>
+          </div>
+          <div class="wrap-row">
+            <div class="wp-area gr-2x2">
+              <article class="zz white module gr-2x2 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <div class="text-block" data-visible="false">
+                    <h1 class="logo">ZZegna</h1>
+                    <h2 class="title">collection</h2>
+                    <h3 class="sub-title">
+                      <span><em>Spring Summer 2013</em></span>
+                    </h3>
+                    <span class="label-link">Discover More</span>
+                  </div>
+                  <img src="images/page/modules/placeholder/mod_2x2_img.gif"  data-url="images/page/modules/mod_2x2_img.jpg" />
+                </a>
+              </article>
+            </div>
+            <div class="wp-area gr-1x2">
+              <!-- class img-silk is related with text module that has class info-silk -->
+              <article class="module gr-1x1 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_img.gif" data-url="images/page/modules/mod_1x1_img.jpg" />
+                </a>
+             </article>
+
+              <article class="module gr-1x1 info t-link">
+                <div class="arrow"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_text.gif"  >
+                  <div class="text-block">
+                    <h3 class="sub-title">
+                      <span><em>Highlights</em></span>
+                    </h3>
+                    <h2 class="title">Seasonal Silk Passion</h2>
+                    <p class="desc">
+                      This autumn, our ambition to deliver the finest materials and the skills of the best artisans
+                    </p>
+                    <span class="label-link">Discover More</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+          <div class="wrap-row">
+            <div class="wp-area gr-3x2">
+              <article class="module gr-1x2 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x2_img.gif"  data-url="images/page/modules/mod_1x2_img.jpg" />
+                </a>
+              </article>
+
+              <article class="module gr-2x1 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_2x1_img.jpg"  data-url="images/page/modules/mod_2x1_img.jpg" />
+                </a>
+              </article>
+
+              <article class="module gr-1x1 info l-link">
+                  <div class="arrow"></div>
+                  <a href="#" class="link-block">
+                    <img src="images/page/modules/placeholder/mod_1x1_img.gif" alt="mod_1x1_img"  >
+                    <div class="text-block">
+                      <h3 class="sub-title">
+                        <span><em>spring summer 2013</em></span>
+                      </h3>
+                      <h2 class="title">Couture Collection</h2>
+                      <p class="desc">
+                        This autumn, our ambition to deliver the finest materials and the skills of the best artisans
+                      </p>
+                      <span class="label-link">Discover More</span>
+                    </div>
+                  </a>
+                </article>
+
+                <article class="module gr-1x1 img">
+                  <div class="loader"></div>
+                  <a href="#" class="link-block">
+                    <img src="images/page/modules/placeholder/mod_1x1_img.gif" data-url="images/page/modules/mod_1x1_img.jpg" />
+                  </a>
+                </article>
+            </div>
+          </div>
+          <div class="wrap-row">
+            <div class="wp-area gr-1x2">
+              <article class="module gr-1x1 info b-link">
+                <div class="arrow"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_img.gif" alt="mod_1x1_img"  >
+                  <div class="text-block">
+                    <h3 class="sub-title">
+                      <span><em>spring summer 2013</em></span>
+                    </h3>
+                    <h2 class="title">Couture Collection</h2>
+                    <p class="desc">
+                      This autumn, our ambition to deliver the finest materials and the skills of the best artisans
+                    </p>
+                    <span class="label-link">Discover More</span>
+                  </div>
+                </a>
+              </article>
+              <article class="module gr-1x1 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_img.gif" data-url="images/page/modules/mod_1x1_img.jpg" />
+                </a>
+              </article>
+            </div>
+            <div class="wp-area gr-1x2">
+              <article class="module gr-1x2 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x2_img.gif"  data-url="images/page/modules/mod_1x2_img.jpg" />
+                </a>
+              </article>
+            </div>
+            <div class="wp-area gr-1x2">
+              <article class="module gr-1x1 info l-link">
+                  <div class="arrow"></div>
+                  <a href="#" class="link-block">
+                    <img src="images/page/modules/placeholder/mod_1x1_img.gif" alt="mod_1x1_img"  >
+                    <div class="text-block">
+                      <h3 class="sub-title">
+                        <span><em>spring summer 2013</em></span>
+                      </h3>
+                      <h2 class="title">Couture Collection</h2>
+                      <p class="desc">
+                        This autumn, our ambition to deliver the finest materials and the skills of the best artisans
+                      </p>
+                      <span class="label-link">Discover More</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="module gr-1x1 img">
+                  <div class="loader"></div>
+                  <a href="#" class="link-block">
+                    <img src="images/page/modules/mod_1x1_img.jpg" data-url="images/page/modules/mod_1x1_img.jpg" />
+                  </a>
+                </article>
+            </div>
+          </div>
+
+
+          <div class="wrap-row">
+             <div class="wp-area gr-3x1">
+              <article class="module gr-2x1 img">
+                <div class="loader"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_2x1_img.jpg"  data-url="images/page/modules/mod_2x1_img.jpg" />
+                </a>
+              </article>
+
+              <article class="module gr-1x1 info t-link">
+                <div class="arrow"></div>
+                <a href="#" class="link-block">
+                  <img src="images/page/modules/placeholder/mod_1x1_text.gif" width="100%" >
+                  <div class="text-block">
+                    <h3 class="sub-title">
+                      <span><em>Lorem ipsum</em></span>
+                    </h3>
+                    <h2 class="title">Zegna Group</h2>
+                    <p class="desc">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elitenderit in voluptate.
+                    </p>
+                    <span class="label-link">Visit Site</span>
+                  </div>
+                </a>
+              </article>
+
+            </div>
+          </div>
+
+          <!--
+<div class="wp-area gr-2x1 clearfix">
+
+            <article class="module gr-2x1 img">
+              <a href="#" class="link-block">
+                <img src="images/page/modules/mod_2x1_img.jpg" alt="mod_2x1_img" width="100%" height="100%">
+              </a>
+            </article>
+
+          </div>
+
+          <div class="wp-area gr-1x1 clearfix">
+
+            <article class="module gr-1x1 info-group info t-link">
+              <div class="arrow"></div>
+              <a href="#" class="link-block">
+                <div class="text-block">
+                  <h3 class="sub-title">
+                    <span class="dash sx"></span><span>Lorem ipsum</span><span class="dash dx"></span>
+                  </h3>
+                  <h2 class="title">Zegna Group</h2>
+                  <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elitenderit in voluptate.
+                  </p>
+                  <span class="label-link">Visit Site</span>
+                </div>
+              </a>
+            </article>
+
+          </div>
+-->
+
+
+          <!--
+<div class="gr-1x1">Accessories Collection</div>
+          <div class="gr-2x1"><img src="images/test/models_2x1.jpg"></div>
+
+          <div class="gr-2x1"><img src="images/test/models_2x1.jpg"></div>
+          <div class="gr-1x1">Accessories Collection</div>
+
+          <div class="gr-2x1"><img src="images/test/models_2x1.jpg"></div>
+          <div class="gr-1x1">Accessories Collection</div>
+
+          <div class="gr-2x1"><img src="images/test/models_2x1.jpg"></div>
+          <div class="gr-1x1">Accessories Collection</div>
+
+          <div class="gr-2x1"><img src="images/test/models_2x1.jpg"></div>
+          <div class="gr-1x1">Accessories Collection</div>
+
+          <div class="gr-2x1"><img src="images/test/models_2x1.jpg"></div>
+          <div class="gr-1x1">Accessories Collection</div>
+-->
+        </div>
+      </section>
+      <a href="#" class="back-to-top">back to top</a>
+    </div><!-- bodywrapper -->
+
+
+    <!-- fwa ribbon -->
+    <a id="fwa" href="http://www.thefwa.com" target="_blank">best websites of the world</a>
+
+    <!-- Vendor -->
+    <script src="js/vendor/jquery-1.8.2.min.js"></script>
+    <script src="js/vendor/jquery.colorbox-min.js"></script>
+    <script src="js/vendor/plugins.js"></script>
+    <script src="js/vendor/EventEmitter.js"></script>
+<!--
+    <script src="js/vendor/jquery.jscrollpane.min.js"></script>
+    <script src="js/vendor/jquery.mousewheel.js"></script>
+    <script src="js/vendor/jquery.background.js"></script>
+-->
+
+    <!-- YOOX :: debug
+    <script src="js/yoox/evo.min.js"></script>
+    <script src="js/yoox/ecpack.controller.min.js"></script>
+    <script src="js/yoox/ecpack.view.min.js"></script>
+    <script src="js/yoox/toolbar.controller.min.js"></script>
+    <script src="js/yoox/store.min.js"></script>
+    <script src="js/yoox/cart.api.min.js"></script>
+    <script src="js/yoox/cart.controller.min.js"></script>
+    <script src="js/yoox/account.api.min.js"></script> -->
+
+    <!-- jsinit -->
+    <script src="js/jsinit.js"></script>
+
+
+    <!-- YOOX :: def -->
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/evo-1.24.7/evo.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/ecpack.controller-1/ecpack.controller.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/ecpack.view-1/ecpack.view.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/toolbar.controller-1/toolbar.controller.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/store-1/store.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/cart.api-1/cart.api.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/cart.controller-2/cart.controller.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/item-1/item.min.js"></script>
+    <script src="http://d14ac9rbwzfcvh.cloudfront.net/javascriptsdk/account.api-1/account.api.min.js"></script>
+    <script src="http://store.zegna.com/js/stores/zegna/dist/sharedLib.min.js"></script>
+
+
+    <!-- Bitmama -->
+    <script src="js/shared.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/application.js"></script>
+
+    <!-- Bitmama Slider -->
+    <script src="js/controlslider.js"></script>
+
+  </body>
+</html>
