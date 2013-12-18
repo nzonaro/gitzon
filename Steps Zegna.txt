@@ -1,0 +1,8 @@
+Tasks about Zegna for today:
+
+OK - Check email Bitmama (I have wrote Esposito that I have needed a new password)
+OK - Check if the repository can be download (All the repositories are been downloaded)
+OK - Email to Esposito about the little popups of headerbar in the top of screen (also about if we have to provide their the footer)
+OK - Try to create the work's environment
+- Try to create an instance of zegna with new modules
+- Try to check the footer, check if the footer can be put on the bottom of the page content without problems
