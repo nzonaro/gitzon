@@ -2,6 +2,7 @@ Modifiche di MASTER(1)
 Modifiche di MASTER(2)
 
 BUGFIX MOLTO IMPORTANTE!!!
+ALTRO BUGFIX MOLTO IMPORTANTE!!!
 
 Modifica Branch 2 (1)
 Modifica Branch 2 (2)
