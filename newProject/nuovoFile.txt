@@ -1,2 +1,5 @@
 Modifiche di MASTER(1)
 Modifiche di MASTER(2)
+
+BUGFIX MOLTO IMPORTANTE!!!
+
