@@ -1,0 +1,39 @@
+Adeguamento grafica Menu ed Header:
+    mi servono gli statici html (css)
+
+Cambiare l’ordine di alcune label, portandole sotto le categorie principali (es: legal area …)
+    Per alcuni link c'è già una logica scorporata dal resto del menu staticoche arriva da yoox, per altri per altri no, per cui è necessario creare una logica anche per questi ultimi.
+
+Free Shipping sotto alla label “Shop Online” -> Bisogna poter settare nel CMS quali mercati eCommerce abbiamo il FreeShipping (solo in questo caso si vedrà la label)
+    Questa informazione verrà decisa da bitmama con un contenuto editoriale ad hoc oppure è un'informazione che arriva da yoox?
+    - da bitmama: creazione del un contenuto editoriale
+    - da yoox: manipolare l'informazione nel json di yoox, contattare yoox per avere tale informazione
+
+Portare nella parte destra dell’header le seguenti aree
+     Customer Care (ad espansione, con sottovoci di menu 4)
+        resi e spedizioni le individuo nell'attuale, mentre contatti online store e contatti corporate no, sono link che arrivano da yoox o sono bitmama?
+     Chiamata
+         spostamento contenuto attuale da sidebar
+     Follow US -> Tutti i social
+         spostamento contenuto attuale da sidebar
+     Icona Mail -> Iscrizione alla Newsletter
+         spostamento contenuto attuale da sidebar
+
+; gli altri item hanno solo modifiche grafiche
+     - lo shopping bag ha una x per chiudere
+     - pulsante "contiunue to shopping" in caso di carrello vuoto
+     - il contenuto del pulsante REGISTER de popup login da dove viene prelevato?
+     
+Noi facciamo i layout PSD e ti daremmo il resto dello sviluppo, dimmi tu:
+·         Se ti servono pezzi di HTML
+               Assolutamente si, mi serve lo statico HTML e css. Sono già connesso alla cartella frontend su github di bitmama .
+
+·         Se c’è bisogno di fare delle modifiche/verifiche per la parte di connessione a Yoox
+             quelle che ho scritto sopra
+
+             
+Mi potresti dare un stima in GG, che sono da erogare non appena abbiamo il codice da Alpenite?(comunque prima delle festività natalizie)
+
+ 
+Ciao e Grazie,
+Giuseppe.
