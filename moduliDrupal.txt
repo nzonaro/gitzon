@@ -1,0 +1,27 @@
+DRUPALCOMMERCE
+Inline Entity Form
+Auto Product Display
+
+
+ADMIN
+* Module Filter
+*Administration menu
+Backup an Migrate
+Coffee
+
+FRONTEND
+* Display suite
+* Context
+Cloud Zoom OR Image Zoomer
+
+Field Collection
+Field Slideshow
+
+
+
+
+
+
+
+
+
